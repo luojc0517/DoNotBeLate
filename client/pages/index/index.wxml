@@ -9,6 +9,7 @@
       </view>  
     </view>  
   </scroll-view>
+  <button class="btn-nextstep" type="primary" size="default" loading="{{loading}}" plain="{{plain}}" bindtap="primary"> 下一步 </button>
     <!-- 用户登录测试 -->
     <!--<view class="userinfo" bindtap="login">
         <image

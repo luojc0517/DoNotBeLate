@@ -62,6 +62,12 @@ page {
 .pages-text {  
   font-size: 14px 
 }
+.btn-nextstep {
+  width: 50%;
+  height: 80rpx;
+  font-size: 14px;
+  margin-top: 40rpx;
+}
 /**demo.wxss**/
 .userinfo, .uploader, .tunnel {
     margin-top: 40rpx;
