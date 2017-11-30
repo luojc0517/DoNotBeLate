@@ -18,6 +18,8 @@ page {
   width: 100%;  
 }  
 .pages-wrapper {  
+  background-color: #fff;
+  height: 1000rpx;
 }  
 .pages-row {  
   width: 100%;  
@@ -26,20 +28,22 @@ page {
   justify-content: space-around;  
 }  
 .pages-item {  
-  position: relative;  
+  position: relative;
+  justify-content: center;  
   padding: 10rpx;  
-  width: 50%;  
-  background-color: #fff;  
-  border: #ddd solid 1px;  
+  width: 50%;    
 }  
 .pages-icon-wrapper {  
   display: flex;  
   justify-content: space-around;  
   align-items: center;  
-  margin: 10rpx;  
+  margin-left: 25%; 
+  margin-bottom: 10rpx;
+  margin-top: 25%; 
   border-radius: 50%;  
-  height: 75%;  
-  background:#00CD0D;  
+  width: 50%;
+  height: 50%;  
+  background:#F6F6F6;  
 }  
 .pages-icon-wrapper-no-bg {  
   display: flex;  
@@ -49,14 +53,14 @@ page {
   height: 75%;  
 }  
 .pages-icon {  
-  width: 100rpx;  
-  height: 100rpx;  
+  width: 50rpx;  
+  height: 50rpx;  
 }  
 .pages-text-wrapper {  
   text-align: center;  
 }  
 .pages-text {  
-  font-weight: bolder;  
+  font-size: 14px 
 }
 /**demo.wxss**/
 .userinfo, .uploader, .tunnel {
