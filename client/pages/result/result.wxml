@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">迟到时间</view>
+      <label class="label-3">
+        <view class="label-3-text">{{lateInMin}}</view>
+      </label>
+    </view>
+  </view>
+</view>

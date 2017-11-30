@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/addCgi/addCgi",
-    "pages/enterParam/enterParam"
+    "pages/enterParam/enterParam",
+    "pages/result/result"
   ],
   "window":{
     "backgroundColor":"#F6F6F6",

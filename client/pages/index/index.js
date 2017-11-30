@@ -49,7 +49,7 @@ Page({
   doNextStep: function () {
     wx.navigateTo({
       url: '../enterParam/enterParam',
-    })
+    });
   },
   // 用户登录示例
   login: function () {
