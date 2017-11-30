@@ -1,0 +1,10 @@
+<template name="paramCell">  
+  <view class="param-item" style="height:{{cellHeight}}">  
+    <view class="param-item-title" >  
+      <text class="param-item-title-text">{{title}}</text>  
+    </view>  
+    <view class="param-item-hint">  
+      <text class="param-item-hint-text">{{hint}}</text>  
+    </view>  
+  </view>  
+</template>

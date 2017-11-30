@@ -45,6 +45,12 @@ Page({
     });
   },
 
+  //下一步
+  doNextStep: function () {
+    wx.navigateTo({
+      url: '../enterParam/enterParam',
+    })
+  },
   // 用户登录示例
   login: function () {
     if (this.data.logged) return
