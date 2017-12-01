@@ -6,12 +6,41 @@ var app = getApp();
 
 Page({
   data: {
-    array: ['南山区', '龙岗区', '福田区', '宝安区', '龙华区'],
-    startLocIndex: 0,
-    endLocIndex: 0,
+    startLoc: {
+      name: "请选择开始位置",
+      address: "深圳市南山区",
+      latitude: 0,
+      longitude: 0
+    },
+    endLoc: {
+      name: "请选择开始位置",
+      address: "深圳市南山区",
+      latitude: 0,
+      longitude: 0
+    },
     date: '2016-09-01',
     startTime: '10:01',
     endTime: '12:01'
+  },
+  chooseStart: function () {
+    var that = this;
+    wx.chooseLocation({
+      success: function (res) {
+        that.setData({
+          startLoc: res
+        });
+      },
+    });
+  },
+  chooseEnd: function () {
+    var that = this;
+    wx.chooseLocation({
+      success: function (res) {
+        that.setData({
+          endLoc: res
+        });
+      },
+    });
   },
   bindStartLocIndexChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -47,6 +76,21 @@ Page({
     var minDiff = endMin - startMin;
     minDiff = minDiff > 0 ? minDiff : 0;
     console.log("minDiff:" + minDiff);
+
+    var disDiff = util.calcDistance(
+      this.data.startLoc.latitude,
+      this.data.startLoc.longitude,
+      this.data.endLoc.latitude,
+      this.data.endLoc.longitude
+    );
+
+    console.log("distance diff:" + disDiff);
+
+    wx.setStorage({
+      key: "directDis",
+      data: disDiff
+    });
+
     wx.setStorage({
       key: "lateInMin",
       data: minDiff

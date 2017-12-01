@@ -7,10 +7,8 @@
           <view class="dnbl-cell__hd">
             <view class="dnbl-label">当前选择</view>
           </view>
-          <view class="dnbl-cell__bd">
-            <picker bindchange="bindStartLocIndexChange" value="{{index}}" range="{{array}}">
-              <view class="dnbl-input">{{array[startLocIndex]}}</view>
-            </picker>
+          <view class="dnbl-cell__bd" bindtap="chooseStart">
+            <view class="dnbl-input">{{startLoc.name}}</view>
           </view>
         </view>
       </view>
@@ -21,10 +19,8 @@
           <view class="dnbl-cell__hd">
             <view class="dnbl-label">当前选择</view>
           </view>
-          <view class="dnbl-cell__bd">
-            <picker bindchange="bindEndLocIndexChange" value="{{index}}" range="{{array}}">
-              <view class="dnbl-input">{{array[endLocIndex]}}</view>
-            </picker>
+          <view class="dnbl-cell__bd" bindtap="chooseEnd">
+            <view class="dnbl-input">{{endLoc.name}}</view>
           </view>
         </view>
       </view>
