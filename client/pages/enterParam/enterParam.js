@@ -7,13 +7,13 @@ var app = getApp();
 Page({
   data: {
     startLoc: {
-      name: "请选择开始位置",
+      name: "请选择出发地点",
       address: "深圳市南山区",
       latitude: 0,
       longitude: 0
     },
     endLoc: {
-      name: "请选择开始位置",
+      name: "请选择活动地点",
       address: "深圳市南山区",
       latitude: 0,
       longitude: 0
