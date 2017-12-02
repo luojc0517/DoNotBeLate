@@ -12,7 +12,8 @@ Page({
     takeSession: false,
     requestResult: '',
     cellHeight: '120px',
-    pageItems: []
+    pageItems: [],
+    curMaxLate: 0
   },
   onLoad: function () {
     var that = this;
@@ -51,6 +52,13 @@ Page({
     wx.navigateTo({
       url: '../enterParam/enterParam',
     });
+  },
+  doSelect: function (e) {
+    console.log(e);
+    var iIndex = e.currentTarget.dataset.index;
+    console.log("iIndex|" + iIndex);
+    this.data.curMaxLate = routes.PageItems[iIndex].maxLate;
+    console.log("curMaxLate|" + this.data.curMaxLate);
   },
   // 用户登录示例
   login: function () {

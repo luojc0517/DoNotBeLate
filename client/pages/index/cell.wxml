@@ -1,6 +1,6 @@
 <template name="cell">  
   <view class="pages-item" style="height:{{cellHeight}}">  
-    <view class="{{text==null||text.length==0?'pages-icon-wrapper-no-bg':'pages-icon-wrapper'}}" >  
+    <view class="{{text==null||text.length==0?'pages-icon-wrapper-no-bg':'pages-icon-wrapper'}}" data-index="{{iIndex}}" bindtap="doSelect">  
       <image src="{{icon}}" class="pages-icon"></image>  
     </view>  
     <view class="pages-text-wrapper">  
