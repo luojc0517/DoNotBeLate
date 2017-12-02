@@ -19,7 +19,7 @@ Page({
     console.log(app);
     var pageItems = [];
     var row = [];
-    var len = routes.PageItems.length;//重组PageItems
+    var len = routes.PageItems.length;//重组PageItems len = 4 
     for (var i = 0; i < len; i++) {
       if ((i + 1) % 2 == 0) {
         row.push(routes.PageItems[i]);
@@ -47,6 +47,7 @@ Page({
 
   //下一步
   doNextStep: function () {
+
     wx.navigateTo({
       url: '../enterParam/enterParam',
     });

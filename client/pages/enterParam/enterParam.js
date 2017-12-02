@@ -67,6 +67,8 @@ Page({
   doCalc: function () {
     console.log("start:" + this.data.startTime);
     console.log("end:" + this.data.endTime);
+
+
     var startVec = (/^(\d+)\:(\d+)$/g).exec(this.data.startTime);
     var endVec = (/^(\d+)\:(\d+)$/g).exec(this.data.endTime);
     var startMin = parseInt(startVec[1]) * 60 + parseInt(startVec[2]);

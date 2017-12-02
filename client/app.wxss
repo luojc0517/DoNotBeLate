@@ -147,6 +147,13 @@ form{
   padding: 0 30rpx;
 }
 
+.btn-bottom{
+  bottom: 480rpx;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 30rpx;
+}
+
 .image-plus {
   width: 150rpx;
   height: 150rpx;
