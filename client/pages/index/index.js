@@ -54,11 +54,29 @@ Page({
     });
   },
   doSelect: function (e) {
+    var tmpPageItems = [];
     console.log(e);
     var iIndex = e.currentTarget.dataset.index;
     console.log("iIndex|" + iIndex);
     this.data.curMaxLate = routes.PageItems[iIndex].maxLate;
     console.log("curMaxLate|" + this.data.curMaxLate);
+    for (var i = 0; i < this.data.pageItems.length; i++) {
+      var itemRow = this.data.pageItems[i];
+      var tmpRow = [];
+      for (var j = 0; j < itemRow.length; j++) {
+        var item = itemRow[j];
+        if (item.iIndex == iIndex) {
+          item.selected = true;
+        } else {
+          item.selected = false;
+        }
+        tmpRow.push(item);
+      }
+      tmpPageItems.push(tmpRow);
+    }
+    this.setData({
+      pageItems: tmpPageItems
+    });
   },
   // 用户登录示例
   login: function () {
