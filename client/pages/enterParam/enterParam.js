@@ -22,6 +22,10 @@ Page({
     startTime: '10:01',
     endTime: '12:01'
   },
+
+  onLoad: function(meeting_type){
+    console.log(meeting_type.type);
+  },
   chooseStart: function () {
     var that = this;
     wx.chooseLocation({

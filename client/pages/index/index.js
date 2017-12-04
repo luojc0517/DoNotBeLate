@@ -50,7 +50,7 @@ Page({
   doNextStep: function () {
 
     wx.navigateTo({
-      url: '../enterParam/enterParam',
+      url: '../enterParam/enterParam?type=sport',//TODO: make type dynamic
     });
   },
   doSelect: function (e) {
