@@ -7,18 +7,19 @@ var app = getApp();
 Page({
   data: {
     startLoc: {
-      name: "请选择出发地点",
+      name: "选择地点",
       address: "深圳市南山区",
       latitude: 0,
       longitude: 0
     },
     endLoc: {
-      name: "请选择活动地点",
+      name: "选择地点",
       address: "深圳市南山区",
       latitude: 0,
       longitude: 0
     },
-    date: '2016-09-01',
+    startDate: '2017-12-01',
+    endDate: '2017-12-01',
     startTime: '10:01',
     endTime: '12:01'
   },
@@ -56,6 +57,16 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       endLocIndex: e.detail.value
+    });
+  },
+  bindStartDateChange: function (e) {
+    this.setData({
+      startDate: e.detail.value
+    });
+  },
+  bindEndDateChange: function (e) {
+    this.setData({
+      endDate: e.detail.value
     });
   },
   bindStartTimeChange: function (e) {
