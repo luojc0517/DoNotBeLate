@@ -4,6 +4,8 @@ var config = require('../../config')
 var util = require('../../utils/util.js')
 var app = getApp();
 var routes = require('routes');
+var sel_type = "null";
+var iIndex=99;
 
 Page({
   data: {
@@ -46,17 +48,10 @@ Page({
     });
   },
 
-  //下一步
-  doNextStep: function () {
-
-    wx.navigateTo({
-      url: '../enterParam/enterParam?type=sport',//TODO: make type dynamic
-    });
-  },
   doSelect: function (e) {
     var tmpPageItems = [];
     console.log(e);
-    var iIndex = e.currentTarget.dataset.index;
+    iIndex = e.currentTarget.dataset.index;
     console.log("iIndex|" + iIndex);
     this.data.curMaxLate = routes.PageItems[iIndex].maxLate;
     console.log("curMaxLate|" + this.data.curMaxLate);
@@ -76,6 +71,33 @@ Page({
     }
     this.setData({
       pageItems: tmpPageItems
+    });
+  },
+
+  //下一步
+  doNextStep: function () {
+
+    switch (iIndex) {
+      case 0:
+        sel_type="food"; 
+        break;
+      case 1:
+        sel_type = "sports"; 
+        break;
+      case 2:
+        sel_type = "relax"; 
+        break;
+      case 3:
+        sel_type = "oblige"; 
+        break;
+      default:
+        sel_type = "null"; 
+    }
+
+
+
+    wx.navigateTo({
+      url: '../enterParam/enterParam?type='+sel_type,//TODO: make type dynamic
     });
   },
   // 用户登录示例
