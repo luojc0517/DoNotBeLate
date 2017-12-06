@@ -16,6 +16,6 @@
   <!--I put it out of page body-->
   </view>
       <view class="btn-bottom" id="buttonContainer">
-      <button type="primary" bindtap="tryAgain">不服重来</button>
+      <button class="button" hover-class="button-hover" bindtap="tryAgain">不服重来</button>
     </view>
 </view>
