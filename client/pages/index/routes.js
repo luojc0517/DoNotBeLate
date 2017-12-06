@@ -7,6 +7,7 @@ var PageItems =
       selIcon:'../../images/img_party.png',
       selected: false,
       maxLate: 15,
+      bkgClass:"pages-icon-wrapper-party"
     },
     {
       iIndex: 1,
@@ -15,6 +16,7 @@ var PageItems =
       selIcon: '../../images/img_sport.png',
       selected: false,
       maxLate: 30,
+      bkgClass: "pages-icon-wrapper-sport"
     },
     {
       iIndex: 2,
@@ -23,6 +25,7 @@ var PageItems =
       selIcon: '../../images/img_hangout.png',
       selected: false,
       maxLate: 40,
+      bkgClass: "pages-icon-wrapper-hangout"
     },
     {
       iIndex: 3,
@@ -31,6 +34,7 @@ var PageItems =
       selIcon: '../../images/img_important.png',
       selected: false,
       maxLate: 0,
+      bkgClass: "pages-icon-wrapper-important"
     }
   ];
 module.exports = {

@@ -34,15 +34,58 @@ page {
   margin-top: 32rpx;
 }
 
-.pages-icon-wrapper {
+.pages-icon-select {
+  position: absolute;
+  right: 21rpx;
+  bottom: 67rpx;
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+  background-color: #09BB07;
+}
+
+.pages-icon-wrapper-party {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 325rpx;
   height: 325rpx;
-  background: #f6f6f6;
   margin-bottom: 15rpx;
   border-radius: 4rpx;
+  background-image: linear-gradient(-1deg, #F5DE9E 1%, #FFB676 97%);
+}
+
+.pages-icon-wrapper-sport {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 325rpx;
+  height: 325rpx;
+  margin-bottom: 15rpx;
+  border-radius: 4rpx;
+  background-image: linear-gradient(-1deg, #C7EFF5 0%, #BBD4FB 97%);
+}
+
+.pages-icon-wrapper-hangout {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 325rpx;
+  height: 325rpx;
+  margin-bottom: 15rpx;
+  border-radius: 4rpx;
+  background-image: linear-gradient(-180deg, #CFF7D1 2%, #A3EDC7 94%);
+}
+
+.pages-icon-wrapper-important {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 325rpx;
+  height: 325rpx;
+  margin-bottom: 15rpx;
+  border-radius: 4rpx;
+  background-image: linear-gradient(-180deg, #FBD0B3 0%, #FA9594 95%);
 }
 
 .pages-icon-wrapper-no-bg {
