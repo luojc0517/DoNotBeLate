@@ -1,7 +1,7 @@
 <template name="cell">
   <view class="pages-item">
     <view class="{{bkgClass}}" data-index="{{iIndex}}" bindtap="doSelect">
-      <view class="pages-icon-select" hidden="{{!selected}}"></view>
+      <icon class="pages-icon-select" hidden="{{!selected}}" type="success" size="23"></icon>
       <image src="{{icon}}" class="pages-icon"></image>
     </view>
     <view class="pages-text-wrapper">

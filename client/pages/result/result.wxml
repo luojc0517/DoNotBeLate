@@ -1,21 +1,23 @@
 <view class="container">
   <view class="page-body">
-    <view class="page-section page-section-gap">
-      <view class="page-section-title">迟到时间</view>
-      <label class="label-3">
-        <view class="label-3-text">{{lateInMin}}</view>
-      </label>
+    <view class="page-top">
+      <image src="../../images/Group 7 Copy@2x.png" class="page-top-icon"></image>
+      <label class="page-top-tips">恭喜！您又双叒叕迟到了，本次需发红包</label>
+      <label class="page-top-fine">{{totalFine}}</label>
     </view>
-    <view class="page-section page-section-gap">
-      <view class="page-section-title">直线距离</view>
-      <label class="label-3">
-        <view class="label-3-text">{{directDis}}</view>
-      </label>
+    <view class="page-top">
+      <view wx:for="{{pageItems}}" wx:key="{{index}}" class="page-top-row">
+        <label class="page-top-rowl">{{item.title}}</label>
+        <label class="page-top-rowr">{{item.text}}</label>
+      </view>
     </view>
- 
-  <!--I put it out of page body-->
+    <view class="btn-bottom" id="buttonContainer">
+      <button class="button" hover-class="button-hover" bindtap="tryAgain">去发红包</button>
+      <view style="height:30rpx;"></view>
+      <button class="button-light" hover-light-class="button-hover" bindtap="tryAgain">不服重来</button>
+    </view>
+    <view class="label-link">
+      <label>查看规则 ></label>
+    </view>
   </view>
-      <view class="btn-bottom" id="buttonContainer">
-      <button class="button" hover-class="button-hover" bindtap="tryAgain">不服重来</button>
-    </view>
 </view>

@@ -38,10 +38,8 @@ page {
   position: absolute;
   right: 21rpx;
   bottom: 67rpx;
-  width: 46rpx;
-  height: 46rpx;
+  background-color: #FFFFFF;
   border-radius: 50%;
-  background-color: #09BB07;
 }
 
 .pages-icon-wrapper-party {
