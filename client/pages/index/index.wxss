@@ -1,19 +1,10 @@
 /**index.wxss**/
 
 page {
-  background: #f6f6f6;
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-
-.pages-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
 }
 
 .pages-title-bg {
@@ -22,7 +13,10 @@ page {
 
 .pages-wrapper {
   background-color: #fff;
-  height: 1000rpx;
+  margin-top: 92rpx;
+  margin-bottom: 116rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
 }
 
 .pages-row {
@@ -35,21 +29,61 @@ page {
 .pages-item {
   position: relative;
   justify-content: center;
-  padding: 10rpx;
-  width: 50%;
+  width: 325rpx;
+  height: 380rpx;
+  margin-top: 32rpx;
 }
 
-.pages-icon-wrapper {
+.pages-icon-select {
+  position: absolute;
+  right: 21rpx;
+  bottom: 67rpx;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+
+.pages-icon-wrapper-party {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-left: 25%;
-  margin-bottom: 10rpx;
-  margin-top: 25%;
-  border-radius: 50%;
-  width: 50%;
-  height: 50%;
-  background: #f6f6f6;
+  width: 325rpx;
+  height: 325rpx;
+  margin-bottom: 15rpx;
+  border-radius: 4rpx;
+  background-image: linear-gradient(-1deg, #F5DE9E 1%, #FFB676 97%);
+}
+
+.pages-icon-wrapper-sport {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 325rpx;
+  height: 325rpx;
+  margin-bottom: 15rpx;
+  border-radius: 4rpx;
+  background-image: linear-gradient(-1deg, #C7EFF5 0%, #BBD4FB 97%);
+}
+
+.pages-icon-wrapper-hangout {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 325rpx;
+  height: 325rpx;
+  margin-bottom: 15rpx;
+  border-radius: 4rpx;
+  background-image: linear-gradient(-180deg, #CFF7D1 2%, #A3EDC7 94%);
+}
+
+.pages-icon-wrapper-important {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 325rpx;
+  height: 325rpx;
+  margin-bottom: 15rpx;
+  border-radius: 4rpx;
+  background-image: linear-gradient(-180deg, #FBD0B3 0%, #FA9594 95%);
 }
 
 .pages-icon-wrapper-no-bg {
@@ -61,8 +95,8 @@ page {
 }
 
 .pages-icon {
-  width: 50rpx;
-  height: 50rpx;
+  width: 204rpx;
+  height: 204rpx;
 }
 
 .pages-text-wrapper {

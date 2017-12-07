@@ -1,11 +1,62 @@
-.label-1, .label-2{
-  margin: 30rpx 0;
+.page-top {
+  margin-top: 42rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1rpx solid #e5e5e5;
 }
-.label-3-text{
-  color: #576B95;
-  font-size: 28rpx;
+
+.page-top-icon {
+  width: 190rpx;
+  height: 140rpx;
+  margin-bottom: 48rpx;
 }
-.checkbox-3{
-  display: block;
-  margin: 30rpx 0;
+
+.page-top-tips {
+  font-size: 14px;
+  color: #888;
+  line-height: 40rpx;
+  height: 40rpx;
+  margin-bottom: 16rpx;
+}
+
+.page-top-fine {
+  font-family: SFProText-Semibold;
+  font-size: 48px;
+  color: #000;
+}
+
+.page-top-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #888;
+  line-height: 40rpx;
+  height: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.page-top-rowl {
+  width: 112rpx;
+}
+
+.page-top-rowr {
+  text-align: right;
+}
+
+.btn-bottom {
+  margin-top: 70rpx;
+}
+
+.label-link {
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  text-align: center;
+  font-size: 13px;
+  color: #576b95;
 }
