@@ -1,3 +1,6 @@
+var sel_type = "null";
+
+
 Page({
   data: {
     lateInMin: 0,
@@ -24,8 +27,12 @@ Page({
     }]
 
   },
-  onLoad: function () {
+  onLoad: function (meeting_type) {
     var that = this;
+    sel_type = meeting_type.type;
+    console.log(sel_type);
+
+
     wx.getStorage({
       key: 'lateInMin',
       success: function (res) {

@@ -3,6 +3,7 @@ var config = require('../../config')
 var util = require('../../utils/util.js')
 var params = require('params');
 var app = getApp();
+var sel_type ="null";
 
 Page({
   data: {
@@ -25,8 +26,11 @@ Page({
   },
 
   onLoad: function(meeting_type){
-    console.log(meeting_type.type);
+    sel_type = meeting_type.type;
+    console.log(sel_type);
+
   },
+  
   chooseStart: function () {
     var that = this;
     wx.chooseLocation({
@@ -90,7 +94,7 @@ Page({
     var endMin = parseInt(endVec[1]) * 60 + parseInt(endVec[2]);
     console.log("start:" + startMin);
     console.log("end:" + endMin);
-    var minDiff = endMin - startMin;
+    var minDiff = endMin - startMin; //时间差
     minDiff = minDiff > 0 ? minDiff : 0;
     console.log("minDiff:" + minDiff);
 
@@ -101,7 +105,10 @@ Page({
       this.data.endLoc.longitude
     );
 
-    console.log("distance diff:" + disDiff);
+    console.log("distance diff in /m:" + disDiff);
+    disDiff = disDiff/1000;
+    console.log("distance diff in /km:" + disDiff);
+
 
     wx.setStorage({
       key: "directDis",
@@ -113,7 +120,8 @@ Page({
       data: minDiff
     });
     wx.navigateTo({
-      url: '../result/result',
+      url: '../result/result?type='+sel_type,
+
     });
   }
 })
