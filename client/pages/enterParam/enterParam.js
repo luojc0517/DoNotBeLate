@@ -105,6 +105,16 @@ Page({
       this.data.endLoc.longitude
     );
 
+
+    var luck_money = util.calLuckyMoney(
+      sel_type,
+      minDiff,
+      disDiff
+    );
+    console.log("money is" + luck_money);
+
+
+
     console.log("distance diff in /m:" + disDiff);
     disDiff = disDiff/1000;
     console.log("distance diff in /km:" + disDiff);
@@ -116,12 +126,16 @@ Page({
     });
 
     wx.setStorage({
+      key: "luckMoney",
+      data: luck_money
+    });
+
+    wx.setStorage({
       key: "lateInMin",
       data: minDiff
     });
     wx.navigateTo({
       url: '../result/result?type='+sel_type,
-
     });
   }
 })

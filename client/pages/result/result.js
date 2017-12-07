@@ -1,3 +1,5 @@
+var util = require('../../utils/util.js')
+
 var sel_type = "null";
 
 
@@ -5,7 +7,6 @@ Page({
   data: {
     lateInMin: 0,
     directDis: 0,
-    totalFine: "¥12.78",
     pageItems: [{
       title: "出发地点",
       text: "高新园3道XXX大厦"
@@ -28,9 +29,11 @@ Page({
 
   },
   onLoad: function (meeting_type) {
+  
     var that = this;
     sel_type = meeting_type.type;
     console.log(sel_type);
+
 
 
     wx.getStorage({
@@ -52,5 +55,24 @@ Page({
         });
       },
     })
+
+
+    wx.getStorage({
+      key: 'luckMoney',
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          totalFine: '¥'+res.data
+        });
+      }
+    });
+  },
+
+  tryAgain :function(){
+    wx.navigateTo({
+      url: '../index/index' ,
+    });
   }
+
 })
+
