@@ -93,11 +93,8 @@ Page({
       default:
         sel_type = "null"; 
     }
-
-
-
     wx.navigateTo({
-      url: '../enterParam/enterParam?type='+sel_type,//TODO: make type dynamic
+      url: '../enterParam/enterParam?type='+sel_type,
     });
   },
   // 用户登录示例
