@@ -1,15 +1,16 @@
-  {
-  "pages":[
+{
+  "pages": [
     "pages/index/index",
     "pages/addCgi/addCgi",
     "pages/enterParam/enterParam",
-    "pages/result/result"
+    "pages/result/result",
+    "pages/rule/rule"
   ],
-  "window":{
-    "backgroundColor":"#F6F6F6",
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "猪猪不迟到",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }

@@ -17,7 +17,7 @@
       <button class="button-light" hover-light-class="button-hover" bindtap="tryAgain">不服重来</button>
     </view>
     <view class="label-link">
-      <label>查看规则 ></label>
+      <label bindtap="checkrule">查看规则 ></label>
     </view>
   </view>
 </view>

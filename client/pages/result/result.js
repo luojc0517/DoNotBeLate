@@ -72,6 +72,12 @@ Page({
     wx.navigateTo({
       url: '../index/index' ,
     });
+  },
+
+  checkrule: function () {
+    wx.navigateTo({
+      url: '../rule/rule',
+    });
   }
 
 })
