@@ -14,38 +14,48 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+/**
+ * 缓存数据
+ */
+const setCache = (sKey, value) => {
+  wx.setStorage({
+    key: sKey,
+    data: value
+  });
+}
+
 //计算红包金额
-const calLuckyMoney = (type_factor,timeDiff,disDiff)=>{
+const calLuckyMoney = (type_factor, timeDiff, disDiff) => {
   var tolance = 0;
   var factor = 0;
-  if (disDiff <= 5 ) {
+  if (disDiff <= 5) {
     tolance = 0;
-  } else if (5<disDiff<=10) {
+  } else if (5 < disDiff <= 10) {
     tolance = 5;
-  } else if (10<disDiff<=15){
-    tolance =10;
+  } else if (10 < disDiff <= 15) {
+    tolance = 10;
   } else if (15 < disDiff <= 20) {
     tolance = 15;
-  } else  {
+  } else {
     tolance = 20;
   }
-  if (type_factor == "food"){
+  if (type_factor == "food") {
     factor = 4;
   }
-  else if (type_factor == "sports"){
+  else if (type_factor == "sports") {
     factor = 3;
   }
-  else if (type_factor == "relax"){
-    factor =2;
+  else if (type_factor == "relax") {
+    factor = 2;
   }
-  else if (type_factor == "oblige"){
+  else if (type_factor == "oblige") {
     factor = 5;
   }
 
-  var money = factor * (timeDiff-tolance)/5;
- // money = money.toFixed(2);
-  if(money>50) money = 50;
-  if(money<0) money =0;
+  var money = factor * (timeDiff - tolance) / 5;
+  // money = money.toFixed(2);
+  if (money > 50) money = 50;
+  if (money < 0) money = 0;
 
   //TODO if use is my IVY, her money will be zero.
 
@@ -88,4 +98,4 @@ var showModel = (title, content) => {
   })
 }
 
-module.exports = { formatTime, showBusy, showSuccess, showModel, calcDistance,calLuckyMoney }
+module.exports = { formatTime, showBusy, showSuccess, showModel, calcDistance, calLuckyMoney, setCache }
