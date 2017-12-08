@@ -8,5 +8,31 @@
 	},
 	"appid": "wx8277edd8a8354b23",
 	"projectname": "DoNotBeLate",
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "test_result",
+					"pathName": "pages/result/result",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "test_enterParam",
+					"pathName": "pages/enterParam/enterParam",
+					"query": ""
+				}
+			]
+		}
+	}
 }

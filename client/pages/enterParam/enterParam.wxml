@@ -1,75 +1,36 @@
 <view class="container">
   <view class="page-body">
     <view class="page-section">
-      <view class="page-card">
-        <view class="dnbl-cells__title">到达</view>
-        <view class="dnbl-cells dnbl-cells_after-title">
-          <view class="dnbl-cell dnbl-cell_input">
-            <view class="dnbl-cell__hd">
-              <view class="dnbl-label">活动地点</view>
-            </view>
-            <view class="dnbl-cell__bd" bindtap="chooseEnd">
-              <view class="dnbl-input">{{endLoc.name}}</view>
-            </view>
+
+      <view wx:for="{{cardItems}}" wx:key="{{index}}" class="page-card">
+        <view class="page-card-title">{{item.title}}</view>
+        <view class="page-card-row">
+          <view class="page-card-rowl">{{item.locTitle}}</view>
+          <view class="page-card-rowr" bindtap="{{item.locFunc}}">
+            <label class="page-card-rowr-text">{{item.locName}}</label>
           </view>
         </view>
-        <view class="dnbl-cells dnbl-cell_sepline"></view>
-        <view class="dnbl-cells dnbl-cells_after-title">
-          <view class="dnbl-cell dnbl-cell_input">
-            <view class="dnbl-cell__hd">
-              <view class="dnbl-label">活动时间</view>
-            </view>
-            <view class="dnbl-cell__bd">
-              <picker mode="date" value="{{date}}" start="2017-12-01" end="2018-12-01" bindchange="bindStartDateChange">
-                <view class="dnbl-date">{{startDate}}</view>
+        <view class="page-card-line"></view>
+        <view class="page-card-row">
+          <view class="page-card-rowl">{{item.timeTitle}}</view>
+          <view class="page-card-rowr">
+            <view class="page-card-rowrl">
+              <picker mode="date" value="{{date}}" start="2017-12-01" end="2018-12-01" bindchange="{{item.dateFunc}}">
+                <view class="page-card-rowrl-date">{{item.date}}</view>
               </picker>
             </view>
-            <view class="dnbl-cell__bd">
-              <picker mode="time" value="{{time}}" start="00:00" end="24:00" bindchange="bindStartTimeChange">
-                <view class="dnbl-input">{{startTime}}</view>
+            <view class="page-card-rowrr">
+              <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="{{item.timeFunc}}">
+                <view class="page-card-rowrr-time">{{item.time}}</view>
               </picker>
             </view>
           </view>
         </view>
       </view>
-
-      <view class="page-card">
-        <view class="dnbl-cells__title">出发</view>
-        <view class="dnbl-cells dnbl-cells_after-title">
-          <view class="dnbl-cell dnbl-cell_input">
-            <view class="dnbl-cell__hd">
-              <view class="dnbl-label">出发地点</view>
-            </view>
-            <view class="dnbl-cell__bd" bindtap="chooseStart">
-              <view class="dnbl-input">{{startLoc.name}}</view>
-            </view>
-          </view>
-        </view>
-        <view class="dnbl-cells dnbl-cell_sepline"></view>
-        <view class="dnbl-cells dnbl-cells_after-title">
-          <view class="dnbl-cell dnbl-cell_input">
-            <view class="dnbl-cell__hd">
-              <view class="dnbl-label">实到时间</view>
-            </view>
-            <view class="dnbl-cell__bd">
-              <picker mode="date" value="{{date}}" start="2017-12-01" end="2018-12-01" bindchange="bindEndDateChange">
-                <view class="dnbl-date">{{endDate}}</view>
-              </picker>
-            </view>
-            <view class="dnbl-cell__bd">
-              <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindEndTimeChange">
-                <view class="dnbl-time">{{endTime}}</view>
-              </picker>
-            </view>
-          </view>
-        </view>
-      </view>
-
-
     </view>
 
-    <view class="btn-area" id="buttonContainer">
-      <button class="button" hover-class="button-hover" bindtap="doCalc" >开始计算</button>
+    <view class="btn-area" id="buttonContainer ">
+      <button class="button " hover-class="button-hover " bindtap="doCalc">开始计算</button>
     </view>
   </view>
 </view>

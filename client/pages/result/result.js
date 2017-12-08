@@ -38,7 +38,7 @@ Page({
   },
 
   tryAgain :function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../index/index' ,
     });
   },

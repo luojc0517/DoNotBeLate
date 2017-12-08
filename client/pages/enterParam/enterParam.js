@@ -20,7 +20,31 @@ Page({
     startDate: '2017-12-01',
     endDate: '2017-12-01',
     startTime: '10:01',
-    endTime: '12:01'
+    endTime: '12:01',
+    cardItems: [
+      {
+        title: "到达",
+        locTitle: "活动地点",
+        locName: "选择地点",
+        locFunc: "chooseEnd",
+        timeTitle: "活动时间",
+        date: "2017-12-01",
+        dateFunc: "bindEndDateChange",
+        time: "09:00",
+        timeFunc: "bindEndTimeChange"
+      },
+      {
+        title: "出发",
+        locTitle: "出发地点",
+        locName: "选择地点",
+        locFunc: "chooseStart",
+        timeTitle: "实到时间",
+        date: "2017-12-01",
+        dateFunc: "bindStartDateChange",
+        time: "09:00",
+        timeFunc: "bindStartTimeChange"
+      }
+    ]
   },
 
   onLoad: function (meeting_type) {
@@ -33,8 +57,11 @@ Page({
     var that = this;
     wx.chooseLocation({
       success: function (res) {
+        console.log("chooseStart:" + res.name);
+        that.data.cardItems[1].locName = res.name;
         that.setData({
-          startLoc: res
+          startLoc: res,
+          cardItems: that.data.cardItems
         });
       },
     });
@@ -43,42 +70,45 @@ Page({
     var that = this;
     wx.chooseLocation({
       success: function (res) {
+        console.log("chooseEnd:" + res.name);
+        that.data.cardItems[0].locName = res.name;
         that.setData({
-          endLoc: res
+          endLoc: res,
+          cardItems: that.data.cardItems
         });
       },
     });
   },
-  bindStartLocIndexChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      startLocIndex: e.detail.value
-    });
-  },
-  bindEndLocIndexChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      endLocIndex: e.detail.value
-    });
-  },
   bindStartDateChange: function (e) {
+    var that = this;
+    that.data.cardItems[1].date = e.detail.value;
     this.setData({
-      startDate: e.detail.value
+      startDate: e.detail.value,
+      cardItems: that.data.cardItems
     });
   },
   bindEndDateChange: function (e) {
+    var that = this;
+    that.data.cardItems[0].date = e.detail.value;
     this.setData({
-      endDate: e.detail.value
+      endDate: e.detail.value,
+      cardItems: that.data.cardItems
     });
   },
   bindStartTimeChange: function (e) {
+    var that = this;
+    that.data.cardItems[1].time = e.detail.value;
     this.setData({
-      startTime: e.detail.value
+      startTime: e.detail.value,
+      cardItems: that.data.cardItems
     });
   },
   bindEndTimeChange: function (e) {
+    var that = this;
+    that.data.cardItems[0].time = e.detail.value;
     this.setData({
-      endTime: e.detail.value
+      endTime: e.detail.value,
+      cardItems: that.data.cardItems
     });
   },
   doCalc: function () {
@@ -139,14 +169,15 @@ Page({
       text: minDiff + " min"
     }];
     util.setCache("resItems", resItems);
-
+    console.log("check loc choose");
     if (this.data.startLoc.name == "选择地点" || this.data.startLoc.name == "") {
       util.showSuccess("请选择出发地点");
     } else if (this.data.endLoc.name == "选择地点" || this.data.endLoc.name == "") {
       util.showSuccess("请选择活动地点");
     } else {
+      console.log("go to result page");
       wx.navigateTo({
-        url: '../result/result?type=' + sel_type,
+        url: '../result/result',
       });
     }
   }

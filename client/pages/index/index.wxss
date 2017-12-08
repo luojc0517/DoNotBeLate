@@ -2,19 +2,26 @@
 
 page {
   background: #FFFFFF;
+}
+
+.page-body {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .pages-title-bg {
   width: 100%;
 }
 
+.btn-area {
+  margin-bottom: 80rpx;
+}
+
 .pages-wrapper {
   background-color: #fff;
   margin-top: 92rpx;
-  margin-bottom: 116rpx;
   padding-left: 30rpx;
   padding-right: 30rpx;
 }
@@ -105,18 +112,6 @@ page {
 
 .pages-text {
   font-size: 14px;
-}
-
-button{
-  margin-top: 30rpx;
-  margin-bottom: 30rpx;
-}
-.button-sp-area{
-  margin: 0 auto;
-  width: 60%;
-}
-.mini-btn{
-  margin-right: 10rpx;
 }
 
 /**demo.wxss**/
