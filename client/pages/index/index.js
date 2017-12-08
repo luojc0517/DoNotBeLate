@@ -5,7 +5,7 @@ var util = require('../../utils/util.js')
 var app = getApp();
 var routes = require('routes');
 var sel_type = "null";
-var iIndex=99;
+var iIndex = 99;
 
 Page({
   data: {
@@ -22,7 +22,7 @@ Page({
     console.log(app);
     var pageItems = [];
     var row = [];
-    var len = routes.PageItems.length;//重组PageItems len = 4 
+    var len = routes.PageItems.length;//重组PageItems len = 4
     for (var i = 0; i < len; i++) {
       if ((i + 1) % 2 == 0) {
         row.push(routes.PageItems[i]);
@@ -79,23 +79,28 @@ Page({
 
     switch (iIndex) {
       case 0:
-        sel_type="food"; 
+        sel_type = "food";
         break;
       case 1:
-        sel_type = "sports"; 
+        sel_type = "sports";
         break;
       case 2:
-        sel_type = "relax"; 
+        sel_type = "relax";
         break;
       case 3:
-        sel_type = "oblige"; 
+        sel_type = "oblige";
         break;
       default:
-        sel_type = "null"; 
+        sel_type = "null";
     }
-    wx.navigateTo({
-      url: '../enterParam/enterParam?type='+sel_type,
-    });
+
+    if (sel_type == "null") {
+      util.showSuccess("请选择类型");
+    } else {
+      wx.navigateTo({
+        url: '../enterParam/enterParam?type=' + sel_type,
+      });
+    }
   },
   // 用户登录示例
   login: function () {

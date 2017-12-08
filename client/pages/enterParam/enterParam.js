@@ -140,9 +140,15 @@ Page({
     }];
     util.setCache("resItems", resItems);
 
-    wx.navigateTo({
-      url: '../result/result?type=' + sel_type,
-    });
+    if (this.data.startLoc.name == "选择地点" || this.data.startLoc.name == "") {
+      util.showSuccess("请选择出发地点");
+    } else if (this.data.endLoc.name == "选择地点" || this.data.endLoc.name == "") {
+      util.showSuccess("请选择活动地点");
+    } else {
+      wx.navigateTo({
+        url: '../result/result?type=' + sel_type,
+      });
+    }
   }
 })
 
