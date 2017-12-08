@@ -38,8 +38,9 @@ Page({
   },
 
   tryAgain :function(){
-    wx.redirectTo({
-      url: '../index/index' ,
+    wx.navigateBack({
+    //  url: '../index/index' ,
+      delta: 2
     });
   },
 
