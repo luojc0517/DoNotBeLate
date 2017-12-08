@@ -98,7 +98,9 @@ Page({
       util.showSuccess("请选择类型");
     } else {
       wx.navigateTo({
-        url: '../enterParam/enterParam?type=' + sel_type,
+     //   url: '../enterParam/enterParam?type=' + sel_type,
+        url: '../rule/rule',
+
       });
     }
   },

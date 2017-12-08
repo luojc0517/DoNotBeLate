@@ -1,7 +1,10 @@
 <!--pages/rule/rule.wxml-->
 <view class="btn-area">
   <view class="body-view">
-    <text>{{text}}</text>
+    <text>{{textrule}}</text>
+
+    <text>5678</text>
+    
 
 
   </view>
