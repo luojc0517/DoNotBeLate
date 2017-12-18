@@ -122,7 +122,7 @@ Page({
     var endMin = parseInt(endVec[1]) * 60 + parseInt(endVec[2]);
     console.log("start:" + startMin);
     console.log("end:" + endMin);
-    var minDiff = endMin - startMin; //时间差
+    var minDiff = startMin - endMin; //时间差
     minDiff = minDiff > 0 ? minDiff : 0;
     console.log("minDiff:" + minDiff);
 
@@ -156,10 +156,10 @@ Page({
       title: "活动地点",
       text: this.data.endLoc.name
     }, {
-      title: "活动时间",
+      title: "到达时间",
       text: this.data.startDate + "  " + this.data.startTime
     }, {
-      title: "到达时间",
+      title: "活动时间",
       text: this.data.endDate + "  " + this.data.endTime
     }, {
       title: "距离间隔",
