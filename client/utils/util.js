@@ -26,37 +26,41 @@ const setCache = (sKey, value) => {
 
 //计算红包金额
 const calLuckyMoney = (type_factor, timeDiff, disDiff) => {
-  var tolance = 0;
+  disDiff /= 1000;
   var factor = 0;
+  var allow = 0;
+  var fine = 0;
 
-  var dis_factor=disDiff;
-
-  if (disDiff>35) dis_factor=35;
-  tolance = dis_factor/5;
-  tolance = tolance.toFixed(1);
-  tolance = tolance*5;
-
-  if (type_factor == "food") {
-    factor = 4;
-    if(tolance>15) tolance =15;
-  } else if (type_factor == "sports") {
-    factor = 3;
-    if (tolance > 30) tolance = 30;
-  } else if (type_factor == "relax") {
-    factor = 2;
-    if (tolance > 40) tolance = 40;
-  } else if (type_factor == "oblige") {
-    factor = 5;
-    tolance = 0;
+  //计算基于活动类型的迟到系数
+  if (type_factor == "food") {//聚餐
+    factor = 15 / 35;
+  } else if (type_factor == "sports") {//运动
+    factor = 30 / 35;
+  } else if (type_factor == "relax") {//休闲
+    factor = 40 / 35;
+  } else if (type_factor == "oblige") {//必到
+    factor = 0 / 35;
   }
 
-  var money = factor * (timeDiff - tolance) / 5;
-   money = money.toFixed(2);
-  if (money > 50) money = 50;
-  if (money < 0) money = 0;
+  //根据活动类型规定允许迟到时间
+  allow = disDiff * factor;
 
-  //TODO if use is my IVY, her money will be zero.
-  return money;
+  console.log("距离|" + disDiff + ",迟到时间|" + timeDiff);
+  console.log("迟到系数|" + factor + ",允许迟到时间|" + allow);
+  console.log("迟到时间|" + timeDiff + ",允许迟到时间|" + allow);
+
+  if (timeDiff > allow) {
+    //根据具体超出时间长短发红包
+    fine = (50 / 50 * (timeDiff - allow)).toFixed(0);
+    fine = fine > 50 ? 50 : fine;
+    console.log("迟到时间|" + timeDiff + ",罚款|" + fine);
+  } else {
+    //迟到时间在允许时间以内，此时不需要发红包
+    fine = 0;
+  }
+
+  //TODO if user is my IVY, her fine will be zero.
+  return fine;
 }
 
 

@@ -21,36 +21,51 @@ Page({
     endDate: '2017-12-01',
     startTime: '10:01',
     endTime: '12:01',
-    cardItems: [
-      {
-        title: "到达",
-        locTitle: "活动地点",
-        locName: "选择地点",
-        locFunc: "chooseEnd",
-        timeTitle: "活动时间",
-        date: "2017-12-01",
-        dateFunc: "bindEndDateChange",
-        time: "09:00",
-        timeFunc: "bindEndTimeChange"
-      },
-      {
-        title: "出发",
-        locTitle: "出发地点",
-        locName: "选择地点",
-        locFunc: "chooseStart",
-        timeTitle: "实到时间",
-        date: "2017-12-01",
-        dateFunc: "bindStartDateChange",
-        time: "09:00",
-        timeFunc: "bindStartTimeChange"
-      }
-    ]
+    cardItems: []
   },
 
   onLoad: function (meeting_type) {
     sel_type = meeting_type.type;
-    console.log(sel_type);
+    this.initParams();
 
+  },
+
+  initParams: function () {
+    var today = new Date();
+    var curDate = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+    var curTime = today.getHours() + ":" + today.getMinutes();
+
+    var curCardItems = [
+      {
+        title: "应到",
+        locTitle: "活动地点",
+        locName: "选择地点",
+        locFunc: "chooseEnd",
+        timeTitle: "活动时间",
+        date: curDate,
+        dateFunc: "bindEndDateChange",
+        time: curTime,
+        timeFunc: "bindEndTimeChange"
+      },
+      {
+        title: "实到",
+        locTitle: "出发地点",
+        locName: "选择地点",
+        locFunc: "chooseStart",
+        timeTitle: "实到时间",
+        date: curDate,
+        dateFunc: "bindStartDateChange",
+        time: curTime,
+        timeFunc: "bindStartTimeChange"
+      }
+    ];
+    this.setData({
+      startDate: curDate,
+      endDate: curDate,
+      startTime: curTime,
+      endTime: curTime,
+      cardItems: curCardItems
+    });
   },
 
   chooseStart: function () {
